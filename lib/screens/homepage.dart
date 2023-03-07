@@ -12,8 +12,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<Note> listOfNotes = [];
 
-  Widget _noteOperations(int index) {
-    return InkWell(
+  Widget _buildNote(int index) {
+    return GestureDetector(
       onTap: () => showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                   });
                 },
                 key: UniqueKey(),
-                child: _noteOperations(index),
+                child: _buildNote(index),
               ),
             ),
       floatingActionButton: FloatingActionButton(
